@@ -159,12 +159,13 @@ def run_evaluation(questions: list = None, run_label: str = None) -> dict:
 
     ragas_llm = LangchainLLMWrapper(
         ChatGroq(
-            model="llama-3.3-70b-versatile",
-            api_key=groq_api_key,
-            temperature=0,
-            n=1,            # ← this fixes the "n must be at most 1" error
+            model       = "llama-3.3-70b-versatile",
+            api_key     = groq_api_key,
+            temperature = 0,
+            n           = 1,          # ← add this line
         )
     )
+    
 
     ragas_embeddings = LangchainEmbeddingsWrapper(
         HuggingFaceEmbeddings(
