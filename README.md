@@ -18,11 +18,11 @@ Built as a real AI engineering project covering the full stack: data ingestion, 
  
 ## Demo
  
-**Live URL:**   [Click Here...!](https://your-app.streamlit.app)
+**Live URL:**   [Click Here...!](https://lexis-rag.streamlit.app)
 
 **API:**  https://lexis-rag.onrender.com
 
-**UI:**   https://your-app.streamlit.app
+**UI:**   https://lexis-rag.streamlit.app
  
 **Sample queries:**
 - *"What is Nestle's revenue in FY2024?"* → ₹242,754.8 million [Source: NestleAnnual-Report-2023-24.pdf, Page 120]
