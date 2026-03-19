@@ -51,7 +51,18 @@ app.add_middleware(
 
 # initialise database on startup
 init_db()
-
+@app.on_event("startup")
+async def startup_event():
+    """Auto-ingest data/ folder on every startup."""
+    import sys
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
+    from ingestion import ingest_folder
+    from embeddings import store_chunks
+    data_path = os.path.join(os.path.dirname(__file__), "..", "data")
+    print("Auto-ingesting documents on startup...")
+    chunks = ingest_folder(data_path)
+    store_chunks(chunks)
+    print(f"Startup ingestion complete — {len(chunks)} chunks ready")
 
 # ──────────────────────────────────────────────────────────
 # REQUEST / RESPONSE MODELS

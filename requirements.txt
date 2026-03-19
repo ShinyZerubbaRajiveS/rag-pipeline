@@ -18,3 +18,4 @@ python-multipart
 datasets
 groq
 pandas
+pydantic==1.10.13
