@@ -345,8 +345,12 @@ from groq import Groq
 from embeddings import retrieve
 
 load_dotenv()
-
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+try:
+    import streamlit as st
+    GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", GROQ_API_KEY)
+except:
+    pass
 
 if not GROQ_API_KEY:
     raise ValueError(
