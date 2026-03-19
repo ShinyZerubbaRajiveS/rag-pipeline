@@ -592,7 +592,7 @@ Only say you don't have information if the context has ZERO relevant data."""
         model       = MODEL_ANSWER,
         messages    = messages,
         temperature = 0.1,
-        max_tokens  = 1024,
+        max_tokens  = 512,
     )
 
     answer = response.choices[0].message.content
